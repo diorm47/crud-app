@@ -1,0 +1,234 @@
+.persons_wrapper {
+  width: 1000px;
+  height: 550px;
+  margin-top: 50px;
+  background: #eeeded;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.top_bar {
+  width: 100%;
+  height: 60px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+
+.search_block input {
+  width: 400px;
+  height: 30px;
+  outline: none;
+  text-indent: 10px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.keys {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  background: #f8f2f291;
+}
+
+.keys .namee,
+.agee,
+.genderr,
+.district {
+  width: 230px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1px solid rgb(216, 216, 216);
+  border-top: none;
+  cursor: pointer;
+}
+
+.persons {
+  width: 1000px;
+  height: 100%;
+  background: #fff;
+}
+
+.set_modal {
+  display: none;
+}
+
+.add_block input {
+  width: 70px;
+  cursor: pointer;
+}
+/* ADD PERSON */
+
+.add_person_form,
+.edit_mode {
+  width: 300px;
+  height: 450px;
+  border-radius: 5px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.add_person_form {
+  margin-top: 100px;
+}
+.add_person_form h1 {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input,
+select {
+  width: 180px;
+  height: 30px;
+  margin: 20px 0;
+  text-indent: 5px;
+  outline: none;
+}
+.discard {
+  position: absolute;
+  right: 0;
+  top: -4px;
+}
+.discard input {
+  width: 25px;
+  height: 20px;
+  border: none;
+  background: red;
+  color: #fff;
+  border-top-right-radius: 3px;
+  cursor: pointer;
+}
+
+.persons {
+  width: 100%;
+
+  height: 420px;
+  background: #fff;
+}
+.persons_list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.keys .number,
+.person .number_id {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.actions {
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.person .number_id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  border: 0.1px solid rgb(216, 216, 216);
+  height: 100%;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.person .name,
+.age,
+.gender,
+.place {
+  width: 230px;
+  height: 40px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.1px solid rgb(216, 216, 216);
+}
+
+.buttons input {
+  cursor: pointer;
+}
+
+.hide_add {
+  display: none;
+}
+
+/* EDIT MODE */
+.edit_mode_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hide_edit_mode {
+  display: none;
+}
+
+.place {
+  position: relative;
+}
+.buttons {
+  width: 90px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.1px solid rgb(216, 216, 216);
+}
+
+.buttons .delete,
+.edit {
+  width: 40px;
+  height: 40px;
+}
+
+form span {
+  color: red;
+  font-size: 12px;
+  margin-top: -15px;
+}
+
+/* Pagination */
+
+.paginator {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
