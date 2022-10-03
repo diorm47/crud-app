@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { addPersonAction } from "../redux/redux";
 import { toggleModal } from "../redux/redux";
+import Snackbar from "./snackbar";
 
 let AddPerson = () => {
   let personsData = useSelector((state) => state.persons);
+  const [snackbar, setSnackbar] = useState(false);
 
   const {
     register,
@@ -22,6 +24,13 @@ let AddPerson = () => {
       id: personsData.slice(-1)[0].id + 1,
     };
     dispatch(addPersonAction(persons));
+    if (data) {
+      setSnackbar(true);
+    }
+    setTimeout(() => {
+      setSnackbar(false);
+      dispatch(toggleModal(false));
+    }, 1200);
   };
 
   const dispatch = useDispatch();
@@ -52,9 +61,10 @@ let AddPerson = () => {
           </select>
           <input placeholder="Manzil" {...register("manzil")} />
 
-          <input type="submit" onClick={() => dispatch(toggleModal(false))} />
+          <input type="submit" />
         </form>
       </div>
+      {!snackbar || <Snackbar props={" qo'shildi!!!"} />}
     </>
   );
 };

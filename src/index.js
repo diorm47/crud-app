@@ -6,7 +6,6 @@ import App from "./App";
 import "./index.css";
 import { customerReducer } from "./redux/redux";
 
-
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

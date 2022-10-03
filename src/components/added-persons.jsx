@@ -1,17 +1,19 @@
 import { Delete } from "@mui/icons-material";
 import EditIcon from "@mui/icons-material/Edit";
 import { IconButton, Tooltip } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   editPersonAction,
   removePersonAction,
-  setEditModeAction
+  setEditModeAction,
 } from "../redux/redux";
+import Snackbar from "./snackbar";
 
 let AddedPersons = () => {
   const persons = useSelector((state) => state.persons);
   const searched = useSelector((state) => state.searchED);
+  const [snackbar, setSnackbar] = useState(false);
   const dispatch = useDispatch();
 
   const removePerson = (person) => {
@@ -20,6 +22,13 @@ let AddedPersons = () => {
 
   const editPerson = (person) => {
     dispatch(editPersonAction(person));
+  };
+
+  const deleteClick = () => {
+    setSnackbar(true);
+    setTimeout(() => {
+      setSnackbar(false);
+    }, 1200);
   };
 
   // const keys = ["name", "id", "age", "gender", "place"];
@@ -75,6 +84,7 @@ let AddedPersons = () => {
                       fontSize="small"
                       onClick={() => {
                         removePerson(person.id);
+                        deleteClick();
                       }}
                     />
                   </IconButton>
@@ -85,7 +95,7 @@ let AddedPersons = () => {
         ))}
       </div>
 
-     
+      {!snackbar || <Snackbar props={" o'chirildi!!!"} />}
     </div>
   );
 };

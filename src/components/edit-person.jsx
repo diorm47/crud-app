@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { editPersonAction, setEditModeAction } from "../redux/redux";
+import Snackbar from "./snackbar";
 
 let EditPerson = () => {
   const edPer = useSelector((state) => state.edit);
   const editMode = useSelector((state) => state.setMode);
+  const [snackbar, setSnackbar] = useState(false);
   const {
     register,
     handleSubmit,
@@ -22,7 +24,14 @@ let EditPerson = () => {
       id: edPer.id,
     };
     dispatch(editPersonAction(persons));
-    dispatch(setEditModeAction(false));
+
+    if (data) {
+      setSnackbar(true);
+    }
+    setTimeout(() => {
+      setSnackbar(false);
+      dispatch(setEditModeAction(false));
+    }, 1200);
   };
 
   return (
@@ -56,9 +65,6 @@ let EditPerson = () => {
             placeholder="jins"
             {...register("jins")}
           >
-            <option defaultValue="" disabled selected>
-              Jins
-            </option>
             <option value="erkak">Erkak</option>
             <option value="ayol">Ayol</option>
             <option value="boshqa">Boshqa</option>
@@ -72,6 +78,8 @@ let EditPerson = () => {
           <input type="submit" />
         </form>
       </div>
+
+      {!snackbar || <Snackbar props={" tahrirlandi!!!"} />}
     </div>
   );
 };

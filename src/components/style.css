@@ -232,3 +232,28 @@ form span {
   align-items: center;
   justify-content: center;
 }
+
+/* SNACKBAR */
+
+.snackbar {
+  width: 400px;
+  height: 100px;
+  position: absolute;
+  top: -70px;
+  left: -600px;
+  z-index: 31;
+  background: rgb(13, 202, 76);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.persons .snackbar,
+.edit_mode_wrapper .snackbar {
+  top: 40px;
+  left: 50px;
+}
