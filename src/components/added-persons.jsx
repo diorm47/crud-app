@@ -7,7 +7,7 @@ import {
   editPersonAction,
   removePersonAction,
   setEditModeAction
-} from "./../redux/reducer";
+} from "../redux/redux";
 
 let AddedPersons = () => {
   const persons = useSelector((state) => state.persons);

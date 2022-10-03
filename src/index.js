@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import { applyMiddleware, compose, createStore } from "redux";
 import App from "./App";
 import "./index.css";
-import { customerReducer } from "./redux/reducer";
+import { customerReducer } from "./redux/redux";
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

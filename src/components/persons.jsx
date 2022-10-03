@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { searchAction, toggleModal } from "./../redux/reducer";
+import { addPersonAction, searchAction, toggleModal } from "./../redux/redux";
 import AddPerson from "./add-person";
 import AddedPersons from "./added-persons";
 import EditPerson from "./edit-person";
@@ -15,6 +15,11 @@ let Persons = () => {
 
   const onSearch = (value) => {
     dispatch(searchAction(value));
+  };
+
+  const sortName = () => {
+    let sortedNames = persons.map((person) => person.name).sort();
+    // dispatch(addPersonAction(sortedNames));
   };
 
   return (
@@ -44,10 +49,10 @@ let Persons = () => {
         </div>
         <div className="content">
           <div className="keys">
-            <div className="number" onClick={}>
+            <div className="number">
               <p>N/</p>
             </div>
-            <div className="namee">
+            <div className="namee" onClick={() => sortName()}>
               <p>Ism</p>
             </div>
             <div className="agee">

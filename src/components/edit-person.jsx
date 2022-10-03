@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { editPersonAction, setEditModeAction } from "../redux/reducer";
+import { editPersonAction, setEditModeAction } from "../redux/redux";
 
 let EditPerson = () => {
   const edPer = useSelector((state) => state.edit);

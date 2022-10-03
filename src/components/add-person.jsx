@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import { addPersonAction } from "../redux/reducer";
-import { toggleModal } from "./../redux/reducer";
+import { useDispatch, useSelector } from "react-redux";
+import { addPersonAction } from "../redux/redux";
+import { toggleModal } from "../redux/redux";
 
 let AddPerson = () => {
+  let personsData = useSelector((state) => state.persons);
+
   const {
     register,
     handleSubmit,
@@ -17,7 +19,7 @@ let AddPerson = () => {
       age: data.yosh,
       gender: data.jins || "---",
       place: data.manzil || "---",
-      id: Date.now(),
+      id: personsData.slice(-1)[0].id + 1,
     };
     dispatch(addPersonAction(persons));
   };
@@ -50,7 +52,7 @@ let AddPerson = () => {
           </select>
           <input placeholder="Manzil" {...register("manzil")} />
 
-          <input type="submit" />
+          <input type="submit" onClick={() => dispatch(toggleModal(false))} />
         </form>
       </div>
     </>

@@ -15,7 +15,6 @@ const Pagination = () => {
   for (let i = 1; i < currentPerson / personsPerPage; i++) {
     pageNumbers.push(i);
   }
-  console.log(pageNumbers);
 
   return (
     <div>
